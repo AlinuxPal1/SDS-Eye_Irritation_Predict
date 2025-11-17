@@ -1,0 +1,18 @@
+Substance,SMILES
+Hydrochloric acid,Cl
+Sulfuric acid,OS(=O)(=O)O
+Sodium hydroxide,[Na+].[OH-]
+Acetic acid,CC(=O)O
+Isopropanol,CC(C)O
+DMSO,CS(=O)C
+Glycerol,C(C(CO)O)O
+Sorbitol,C(C(C(C(C(CO)O)O)O)O)O
+Sucrose,OC[C@H]1O[C@@H](O[C@@H]2CO[C@H](O)[C@@H](O)[C@H](O2)CO)[C@H](O)[C@@H](O)[C@@H]1O
+Triethylene glycol,OCCOCCOCCO
+Carbon dioxide,O=C=O
+Nitrogen,N#N
+Oxygen,O=O
+Argon,[Ar]
+Sodium chloride,[Na+].[Cl-]
+Potassium chloride,[K+].[Cl-]
+INVALID_SMILES,ASD???
