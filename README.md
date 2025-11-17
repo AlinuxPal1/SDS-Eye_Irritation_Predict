@@ -35,7 +35,7 @@ Planned improvements for Version 0.2 / 0.3 include:
 	•	Publishing performance metrics (ROC, PR curve, confusion matrix)
 
 
-	## Installation
+ Installation
 
 Clone the repository:
 
