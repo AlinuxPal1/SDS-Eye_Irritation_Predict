@@ -33,3 +33,33 @@ Planned improvements for Version 0.2 / 0.3 include:
 	•	Implementing model diagnostics (SHAP, t-SNE, clustering)
 	•	Providing interactive dashboards for prediction exploration
 	•	Publishing performance metrics (ROC, PR curve, confusion matrix)
+
+
+	## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AlinuxPal1/SDS-Eye_Irritation_Predict.git
+cd SDS-Eye_Irritation_Predict
+
+conda create -n sds_eye python=3.10
+conda activate sds_eye
+
+pip install -r requirements.txt
+
+To run a full prediction on the example SDS file (data/test_sds_eye.csv), use:
+python run_sds_eye_demo.py
+
+Example output
+Preview:
+           Substance       SMILES  eye_smiles_valid  eye_irritation_prob  eye_irritation_flag
+0  Hydrochloric acid           Cl              True             0.964762                  1.0
+1      Sulfuric acid  OS(=O)(=O)O              True             0.744941                  1.0
+2   Sodium hydroxide  [Na+].[OH-]              True             0.964762                  1.0
+3        Acetic acid      CC(=O)O              True             0.944016                  1.0
+4        Isopropanol       CC(C)O              True             0.951597                  1.0
+
+Notes
+	•	Invalid SMILES strings (e.g., ASD???) are flagged automatically.
+	•	eye_irritation_flag uses a default threshold of 0.40 but can be customized.
