@@ -1,55 +1,35 @@
-# SDS-EYE Predictor  
-Predictive Safety Screening for Eye Irritation in SDS Ingredients
+Model Status (Version 0.1 – Prototype Release)
 
----
+This repository currently includes a prototype version of the SDS-EYE predictive model.
+The full software pipeline (featurization, batch prediction, CLI, reporting) is functional and stable, but the underlying ML model is not yet validated for real-world toxicological use.
 
-## Overview
-**SDS-EYE Predictor** is a lightweight, fully reproducible project designed to classify potential **eye irritation risk** of chemical ingredients commonly found in **Safety Data Sheets (SDS)**.
+Known limitations (v0.1)
+	•	The model was trained on a limited and chemically homogeneous dataset, which causes:
+	•	overprediction of eye irritation for many classes of chemicals (e.g., gases, inorganic salts),
+	•	poor generalization outside the original training domain,
+	•	probability saturation effects (values clustering around 0.95).
+	•	No domain applicability filter is implemented yet.
+	•	The model has not undergone calibration, external validation, or regulatory-grade evaluation.
 
-The project uses:
-- **RDKit** for 1024-bit Morgan fingerprints  
-- A pre-trained **XGBoost classifier** (not included in the repository)  
-- A clean and auditable Python pipeline  
-- Optional applicability-domain (DA) checks based on Tanimoto similarity  
+What this version is
+	•	A working prototype of the full prediction pipeline.
+	•	A demonstration of molecular featurization + ML inference + reporting.
+	•	A robust software foundation for future improved models.
 
-The goal is to demonstrate:
-- Transparent data processing  
-- Reproducible model loading and prediction  
-- Clean, industry-aligned design  
-- Practical SDS-style usage  
+What this version is NOT
+	•	A validated toxicological classifier.
+	•	A tool to support regulatory or safety decisions.
+	•	A source of reliable irritation predictions for out-of-domain substances.
 
-The project ideal for **portfolio**, **LinkedIn**, and **early ML-safety R&D demonstrations**.
+⸻
 
----
+Roadmap for the next releases
 
-## Project Structure
-
-sds-eye-predictor/
-│
-├── src/
-│   └── sds_eye/
-│       ├── featurization.py
-│       ├── model_eye.py
-│       └── sds_eye_predict.py
-│
-├── data/
-│   └── test_sds_eye.csv
-│
-├── models/
-│   └── eye_xgb_1024_scaffold.pkl   (not included)
-│
-├── reports/
-│
-├── run_sds_eye_demo.py
-├── requirements.txt
-└── README.md
-
----
-
-## Installation  
-
-Create an environment and install dependencies:
-
-```bash
-pip install -r requirements.txt
-
+Planned improvements for Version 0.2 / 0.3 include:
+	•	Re-training the model on a diverse, balanced, and high-quality dataset
+	•	Implementing a full domain of applicability (DoA) module
+	•	Adding probability calibration (Platt scaling or isotonic regression)
+	•	Benchmarking against public irritation datasets (e.g. ECHA, OECD)
+	•	Implementing model diagnostics (SHAP, t-SNE, clustering)
+	•	Providing interactive dashboards for prediction exploration
+	•	Publishing performance metrics (ROC, PR curve, confusion matrix)
